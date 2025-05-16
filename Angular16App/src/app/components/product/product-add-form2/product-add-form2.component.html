@@ -1,0 +1,91 @@
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      required
+      formControlName="name"
+      name="name"
+    />
+    <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Ürün adı giriniz.
+    </div> -->
+  </div>
+  <div class="form-group">
+    <label for="description">Açıklama</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      formControlName="description"
+      name="description"
+      required
+    />
+    <!-- <div
+      [hidden]="description.valid || description.pristine"
+      class="alert alert-danger"
+    >
+      Açıklama yazınız.
+    </div> -->
+  </div>
+  <div class="form-group">
+    <label for="description">Ürün Resim Adresi</label>
+    <input
+      type="text"
+      class="form-control"
+      id="imageUrl"
+      formControlName="imageUrl"
+      name="imageUrl"
+      required
+    />
+    <!-- <div
+      [hidden]="imageUrl.valid || imageUrl.pristine"
+      class="alert alert-danger"
+    >
+      Ürün resminin adresini giriniz.
+    </div> -->
+  </div>
+  <div class="form-group">
+    <label for="description">Ürün Fiyatı</label>
+    <input
+      type="number"
+      class="form-control"
+      id="price"
+      formControlName="price"
+      name="price"
+      required
+    />
+    <!-- <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+      Ürün fiyatını giriniz.
+    </div> -->
+  </div>
+  <div class="form-control">
+    <label for="categoryId">Ürün Kategorisi</label>
+    <select
+      name="categoryId"
+      formControlName="categoryId"
+      id="categoryId"
+      required
+      class="form-control"
+    >
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+    <!-- <div
+      [hidden]="categoryId.valid || categoryId.pristine"
+      class="alert alert-danger"
+    >
+      Ürün fiyatını giriniz.
+    </div> -->
+  </div>
+  <button
+    type="submit"
+    class="btn btn-success"
+    [disabled]="addProductForm.invalid"
+  >
+    Kaydet
+  </button>
+</form>

@@ -19,7 +19,7 @@ export class ProductService {
   addProduct(product: Product): Observable<Product> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'applicaiton/json',
+        'Content-Type': 'application/json',
         'Authorization': 'Token'
       })
     }
